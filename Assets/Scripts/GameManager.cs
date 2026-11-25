@@ -1,8 +1,9 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public int gold = 5;
+    public int gold = 200;
 
     public int goldPerMinute = 5;
     public int goldTimer = 0;
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
     }
 
     public void BastetRitual()
@@ -33,6 +35,9 @@ public class GameManager : MonoBehaviour
         {
             gold = gold - 5;
             goldPerMinute = goldPerMinute + 2;
+            
+            Debug.Log("Current Gold:" + gold);
+            
             if (favourBastet < 100)
             {
                 favourBastet = favourBastet + 25;
@@ -46,6 +51,9 @@ public class GameManager : MonoBehaviour
         {
             gold = gold - 10;
             goldPerMinute = goldPerMinute + 3;
+            
+            Debug.Log("Current Gold:" + gold);
+            
             if (favourRa < 100)
             {
                 favourRa = favourRa + 25;
@@ -63,6 +71,9 @@ public class GameManager : MonoBehaviour
         if (gold >= 20)
         {
             gold = gold - 20;
+            
+            Debug.Log("Current Gold:" + gold);
+            
             if (favourAnubis < 100)
             {
                 favourAnubis = favourAnubis + 25;
@@ -78,6 +89,7 @@ public class GameManager : MonoBehaviour
             {
                 gold = gold - 30;
                 favourHapi = favourHapi + 25;
+                Debug.Log("Current Gold:" + gold);
             }
         }
     }
